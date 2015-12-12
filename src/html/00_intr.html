@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../css/00_intr.css">
+    <script src="../../lib/angular.min.js"></script>
+    <script></script>
 </head>
 <body>
-    <button></button>
-    <button></button>
+    <div class="window" ng-app="intr" ng-init="intrSwitch=false">
+        <button class="left" ng-model="intrSwitch">TIPS</button>
+        <button class="right"  ng-disabled="intrSwitch">NEXT</button>
+    </div>
 </body>
 </html>
