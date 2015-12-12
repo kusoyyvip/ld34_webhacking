@@ -4,14 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
+    <link rel="stylesheet" href="../css/bubble.css">
     <link rel="stylesheet" href="../css/00_intr.css">
     <script src="../../lib/angular.min.js"></script>
-    <script></script>
+    <script>
+    var app = angular.module('intr', []);
+    app.controller('buttonCtrl', function($scope) {
+        $scope.intrSwitch = false;
+        $scope.intr = function() {
+            $scope.intrSwitch = !$scope.intrSwitch;
+        };
+    });
+    </script>
 </head>
 <body>
-    <div class="window" ng-app="intr" ng-init="intrSwitch=false">
-        <button class="left" ng-model="intrSwitch">TIPS</button>
-        <button class="right"  ng-disabled="intrSwitch">NEXT</button>
+    <div class="window" ng-app="intr" ng-init="intrSwitch=false" ng-controller="buttonCtrl">
+        <blockquote class="bubble" ng-hide="intrSwitch">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </blockquote>
+        <br>
+        <button class="left" ng-click="intr()">Tips</button>
+        <button class="right"  ng-disabled="intrSwitch">Next</button>
     </div>
 </body>
 </html>
